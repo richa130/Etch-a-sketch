@@ -30,6 +30,7 @@ body {
     background-color: gray;
     border: 5px solid black;
     border-radius: 6px;
+    flex-shrink: 0;
     display: flex;
     flex-flow: wrap;
 }
@@ -51,5 +52,4 @@ body {
 
 a {
     color: darkred;
-    text-decoration: none;
 }
