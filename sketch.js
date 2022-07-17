@@ -17,6 +17,21 @@ slider.oninput = function() {
     drawGrid(this.value);
 }
 
+// getting all the buttons + adding their events
+const clearBtn = document.querySelector('.clear');
+clearBtn.onclick = function() { clearGrid() }
+
+const eraseBtn = document.querySelector('.erase');
+eraseBtn.onclick = function() { erasePen() }
+
+const bwBtn = document.querySelector('.bw');
+bwBtn.onclick = function() { drawPen() }
+
+const rainbowBtn = document.querySelector('.rainbow');
+rainbowBtn.onclick = function() { drawRainbow() }
+
+/****************************************** all the functions ******************************************/
+
 function drawGrid(gridSize) {
     let divSide = sketchpadHeight / gridSize;
 
@@ -33,9 +48,8 @@ function drawGrid(gridSize) {
         
             sketchpad.appendChild(currDiv);
 
-            currDiv.addEventListener("mouseover", event => event.target.style.backgroundColor = 'black'); //event.target.backgroundColor = 'black');
-
-            //currDiv.onmouseover = function() { this.style.backgroundColor = 'black' };
+            // default pen setting is black/white
+            currDiv.addEventListener('mouseover', event => event.target.style.backgroundColor = 'black');
         }
     }
 }
@@ -43,4 +57,30 @@ function drawGrid(gridSize) {
 function removeGrid() {
     let sketchpadGrid = document.querySelectorAll('.sketchpad div');
     sketchpadGrid.forEach(element => sketchpad.removeChild(element));
+}
+
+function clearGrid() {
+    let sketchpadGrid = document.querySelectorAll('.sketchpad div');
+    sketchpadGrid.forEach(element => element.style.backgroundColor = 'transparent');
+}
+
+function erasePen() {
+    let sketchpadGrid = document.querySelectorAll('.sketchpad div');
+    sketchpadGrid.forEach(element => element.addEventListener('mouseover', event => event.target.style.backgroundColor = 'transparent'));
+}
+
+function drawPen() {
+    let sketchpadGrid = document.querySelectorAll('.sketchpad div');
+    sketchpadGrid.forEach(element => element.addEventListener('mouseover', event => event.target.style.backgroundColor = 'black'));
+}
+
+function drawRainbow() {
+    let sketchpadGrid = document.querySelectorAll('.sketchpad div');
+    sketchpadGrid.forEach(element => element.addEventListener('mouseover', event => {
+        event.target.style.backgroundColor = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`;
+    }));
+}
+
+function randomNum() {
+    return Math.floor( Math.random() * 255 );
 }
