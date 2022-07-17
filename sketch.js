@@ -32,6 +32,10 @@ function drawGrid(gridSize) {
             currDiv.style.border = '0.5px solid black';
         
             sketchpad.appendChild(currDiv);
+
+            currDiv.addEventListener("mouseover", event => event.target.style.backgroundColor = 'black'); //event.target.backgroundColor = 'black');
+
+            //currDiv.onmouseover = function() { this.style.backgroundColor = 'black' };
         }
     }
 }
