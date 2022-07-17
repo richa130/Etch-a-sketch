@@ -1,6 +1,6 @@
 This project is an Etch-a-sketch/sketchpad recreation. I am hoping that it will solidify my understanding of DOM manipulation with JavaScript. 
 
-Link to project: (https://richa130.github.io/etch-a-sketch/)[https://richa130.github.io/etch-a-sketch/]
+Link to project: [https://richa130.github.io/etch-a-sketch/](https://richa130.github.io/etch-a-sketch/)
 
 The process: 
 
