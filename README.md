@@ -1,4 +1,4 @@
-This project is an Etch-a-sketch/sketchpad recreation. I am hoping that it will solidify my understanding of DOM manipulation with JavaScript. 
+This project solidified my understanding of DOM manipulation and event listeners in JavaScript. 
 
 Link to project: [https://richa130.github.io/etch-a-sketch/](https://richa130.github.io/etch-a-sketch/)
 
